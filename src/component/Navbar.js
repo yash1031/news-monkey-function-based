@@ -6,7 +6,7 @@ const Navbar=(props)=> {
       <div className="fixed-top menuu">
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
           <div className="container-fluid">
-            <Link className="navbar-brand" to="/general"> NewsMonkey </Link>
+            <Link className="navbar-brand" to="/general"> News Express </Link>
             <button
               className="navbar-toggler"
               type="button"
