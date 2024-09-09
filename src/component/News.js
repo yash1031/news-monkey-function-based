@@ -46,7 +46,7 @@ const News=(props)=>{
 
     return (
       <>
-          <h2  className='mx-4 my-4' style={{paddingTop:"50px"}}>Top  {capital(props.category)} Headlines</h2>
+          <h2  className='mx-4 my-4' style={{paddingTop:"50px"}}>Top  {props.category==='general'?'':capital(props.category)} Headlines</h2>
             {loading&&<Spinner/>}
             <InfiniteScroll dataLength={articles.length} hasMore={articles.length!=totalResults} next={fetchMoreData} loader={<Spinner/>}>
             <div className="container my-2 ">
