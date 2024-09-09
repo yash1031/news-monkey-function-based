@@ -42,13 +42,14 @@ const News=(props)=>{
 
   useEffect(()=>{   //instead of coponentdidmount
     updatefun()
+    // eslint-disable-next-line
   },[])
 
     return (
       <>
           <h2 style={{paddingTop:"100px", paddingLeft: '6%', paddingBottom: "10px"}}>Top  {props.category==='general'?'':capital(props.category)} Headlines</h2>
             {loading&&<Spinner/>}
-            <InfiniteScroll dataLength={articles.length} hasMore={articles.length!=totalResults} next={fetchMoreData} loader={<Spinner/>}>
+            <InfiniteScroll dataLength={articles.length} hasMore={articles.length!==totalResults} next={fetchMoreData} loader={<Spinner/>}>
             <div className="container my-2 ">
               <div className="row" >
                 {articles.map((element)=>{
@@ -91,7 +92,7 @@ News.propTypes = {
   //     this.updatefun()
   // }
 
-{/* <div className="container d-flex justify-content-between">
+/* <div className="container d-flex justify-content-between">
     <button disabled={this.state.page<=1} type="button" onClick={this.handleprevious} className="btn btn-primary" > &larr;Previous</button>
     <button disabled={this.state.page >= this.state.totalResults/props.size} type="button" onClick={this.handlenext} className="btn btn-primary" >Next&rarr;</button>
-</div> */}
+</div> */
