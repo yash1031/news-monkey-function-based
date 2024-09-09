@@ -1,10 +1,10 @@
 import React from 'react'
-//triple7charlie
 const Newsitem=(props)=> {
     let {title,description,imageUrl,newsUrl,author,date}=props
     return ( 
+      title==="[Removed]"? <></>:
       <div className='mb-3'  >
-         <div className="roww " >
+         <div className="roww" >
            <div className="image" >
              <img src={imageUrl?imageUrl: "https://indian-shtabdi-news.netlify.app/No_Image_Available.jpg"} className="img-fluid rounded-start" alt="Re"/>
            </div>

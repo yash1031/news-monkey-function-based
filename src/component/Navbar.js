@@ -23,13 +23,13 @@ const Navbar=(props)=> {
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                 <li className="nav-item"><Link className="nav-link" to="/general"> general</Link></li>
-                 <li className="nav-item"><Link className="nav-link" to="/business">business </Link></li>
-                 <li className="nav-item"><Link className="nav-link" to="/entertainment"> entertainment</Link></li>
-                 <li className="nav-item"><Link className="nav-link" to="/health">  health</Link></li>
-                 <li className="nav-item"><Link className="nav-link" to="/science">  science</Link></li>
-                 <li className="nav-item"><Link className="nav-link" to="/sports">   sports</Link></li>
-                 <li className="nav-item"><Link className="nav-link" to="/technology"> technology  </Link></li>
+                 <li className="nav-item"><Link className="nav-link" to="/general">General</Link></li>
+                 <li className="nav-item"><Link className="nav-link" to="/business">Business </Link></li>
+                 <li className="nav-item"><Link className="nav-link" to="/entertainment">Entertainment</Link></li>
+                 <li className="nav-item"><Link className="nav-link" to="/health">Health</Link></li>
+                 <li className="nav-item"><Link className="nav-link" to="/science">Science</Link></li>
+                 <li className="nav-item"><Link className="nav-link" to="/sports">Sports</Link></li>
+                 <li className="nav-item"><Link className="nav-link" to="/technology">Technology  </Link></li>
               </ul>
              
             </div>

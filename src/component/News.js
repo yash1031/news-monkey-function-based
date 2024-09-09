@@ -7,17 +7,17 @@ const News=(props)=>{
   const capital=(string)=> {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
-  // document.title=`${this.capital(props.category)} - NewsMonkey `
   const[articles,setArticles]=useState([])
   const[loading,setLoading]=useState(false)
   let[page,setPage]=useState(1)
-  // let page=1;
   const[totalResults,setTotalResults]=useState(0)
+
   const updatefun = async ()=>{
     props.setProgress(10)
     let url=`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apikey}&pageSize=${props.size}&page=${page}`
     setLoading(true)   
-    let data= await fetch(url);    
+    let data= await fetch(url); 
+    console.log(data);   
     props.setProgress(50)
     let parseddata =  await data.json();    
     props.setProgress(70)
@@ -27,6 +27,7 @@ const News=(props)=>{
     props.setProgress(100)
     // console.log("rafjfk;kf =km, l,l lml, lm,l, ,l, ")
   }
+
   const fetchMoreData = async ()=>{
     // console.log(page)
     setPage(page=page+1)
@@ -38,15 +39,15 @@ const News=(props)=>{
     setArticles(articles.concat(parseddata.articles))
     setLoading(false)
   }
+
   useEffect(()=>{   //instead of coponentdidmount
     updatefun()
   },[])
+
     return (
       <>
-          <h2  className='text-center my-4' style={{paddingTop:"50px"}}>NewsMonkey - Top  {capital(props.category)} Headlines</h2>
+          <h2  className='mx-4 my-4' style={{paddingTop:"50px"}}>Top  {capital(props.category)} Headlines</h2>
             {loading&&<Spinner/>}
-            {/* {console.log("adfasdfasdfsaf")} */}
-            {/* {console.log(articles.length,totalResults)} */}
             <InfiniteScroll dataLength={articles.length} hasMore={articles.length!=totalResults} next={fetchMoreData} loader={<Spinner/>}>
             <div className="container my-2 ">
               <div className="row" >
@@ -66,7 +67,7 @@ export default News
 
 
 News.defaultProps ={
-  country:'in',
+  country:'us',
   category:'general',
   size:10
 }
